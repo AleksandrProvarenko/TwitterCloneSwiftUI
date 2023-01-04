@@ -13,6 +13,7 @@
 		0B7FB8152964529800EF7F77 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FB8142964529800EF7F77 /* FeedView.swift */; };
 		0B7FB8182964544700EF7F77 /* TweetRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B7FB8172964544700EF7F77 /* TweetRowView.swift */; };
 		0B805C2429659F8900B030E8 /* TweetFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B805C2329659F8900B030E8 /* TweetFilterViewModel.swift */; };
+		0B805C292965B1AC00B030E8 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B805C282965B1AC00B030E8 /* UserRowView.swift */; };
 		0B94036529645FAA00C5E8EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94036429645FAA00C5E8EA /* ContentView.swift */; };
 		0B9403682964613F00C5E8EA /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B9403672964613F00C5E8EA /* MainTabBarView.swift */; };
 		0B94036E2964643700C5E8EA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B94036D2964643700C5E8EA /* ExploreView.swift */; };
@@ -29,6 +30,7 @@
 		0B7FB8142964529800EF7F77 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0B7FB8172964544700EF7F77 /* TweetRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetRowView.swift; sourceTree = "<group>"; };
 		0B805C2329659F8900B030E8 /* TweetFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetFilterViewModel.swift; sourceTree = "<group>"; };
+		0B805C282965B1AC00B030E8 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		0B94036429645FAA00C5E8EA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B9403672964613F00C5E8EA /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 		0B94036D2964643700C5E8EA /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 		0B7FB810296451F000EF7F77 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0B805C272965B18A00B030E8 /* Users */,
 				0B7FB8162964540900EF7F77 /* Tweets */,
 			);
 			path = Components;
@@ -133,8 +136,8 @@
 		0B7FB8112964521000EF7F77 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				0B7FB8132964525E00EF7F77 /* View */,
 				0B7FB8122964525C00EF7F77 /* ViewModel */,
+				0B7FB8132964525E00EF7F77 /* View */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -160,6 +163,29 @@
 				0B7FB8172964544700EF7F77 /* TweetRowView.swift */,
 			);
 			path = Tweets;
+			sourceTree = "<group>";
+		};
+		0B805C252965B02200B030E8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0B94036D2964643700C5E8EA /* ExploreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B805C262965B02400B030E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0B805C272965B18A00B030E8 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				0B805C282965B1AC00B030E8 /* UserRowView.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		0B9403662964610600C5E8EA /* MainTabBar */ = {
@@ -189,7 +215,8 @@
 		0B94036B2964638C00C5E8EA /* Explore */ = {
 			isa = PBXGroup;
 			children = (
-				0B94036D2964643700C5E8EA /* ExploreView.swift */,
+				0B805C262965B02400B030E8 /* ViewModel */,
+				0B805C252965B02200B030E8 /* View */,
 			);
 			path = Explore;
 			sourceTree = "<group>";
@@ -297,6 +324,7 @@
 				0B7FB8152964529800EF7F77 /* FeedView.swift in Sources */,
 				0B94036529645FAA00C5E8EA /* ContentView.swift in Sources */,
 				0B94036E2964643700C5E8EA /* ExploreView.swift in Sources */,
+				0B805C292965B1AC00B030E8 /* UserRowView.swift in Sources */,
 				0B7FB7FF296437C000EF7F77 /* TwitterCloneApp.swift in Sources */,
 				0B9403702964647A00C5E8EA /* NotificationsView.swift in Sources */,
 			);

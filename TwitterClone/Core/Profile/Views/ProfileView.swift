@@ -11,6 +11,7 @@ struct ProfileView: View {
     
     @State private var selectedFilter: TweetFilterViewModel = .tweets
     @Namespace var animation
+    @Environment(\.presentationMode) var mode
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -39,7 +40,7 @@ extension ProfileView {
             
             VStack {
                 Button {
-                   //
+                    mode.wrappedValue.dismiss()
                 } label: {
                     Image(systemName: "arrow.left")
                         .resizable()
@@ -133,9 +134,9 @@ extension ProfileView {
     }
     
     var tweetFilterBar: some View {
-        HStack() {
+        HStack {
             ForEach(TweetFilterViewModel.allCases, id: \.rawValue) { item in
-                VStack() {
+                VStack {
                     Text(item.title)
                         .font(.subheadline)
                         .fontWeight(selectedFilter == item ? .semibold: .regular)
