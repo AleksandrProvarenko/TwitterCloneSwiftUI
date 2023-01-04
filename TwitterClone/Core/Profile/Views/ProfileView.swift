@@ -20,7 +20,7 @@ struct ProfileView: View {
             userInfoDetails
             tweetFilterBar
             tweetView
-           
+            
             Spacer()
         }
     }
@@ -48,10 +48,10 @@ extension ProfileView {
                         .foregroundColor(.white)
                         .offset(x: .zero , y: 5)
                 }
-
+                
                 Circle()
                     .frame(width: 80, height: 80)
-                .offset(x: 20, y: 32)
+                    .offset(x: 20, y: 32)
             }
         }
         .frame(height: 110)
@@ -110,25 +110,7 @@ extension ProfileView {
             .font(.caption)
             .padding(.vertical)
             
-            HStack(spacing: 25) {
-                HStack(spacing: 5 ) {
-                    Text("300")
-                        .font(.subheadline)
-                        .bold()
-                    Text("Following")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-                
-                HStack(spacing: 5) {
-                    Text("800")
-                        .font(.subheadline)
-                        .bold()
-                    Text("Followers")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-            }
+            UserStatsView()
         }
         .padding(.horizontal)
     }
