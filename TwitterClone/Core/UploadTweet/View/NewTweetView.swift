@@ -12,7 +12,7 @@ struct NewTweetView: View {
     @State private var caption = ""
     @Environment(\.presentationMode) var presentationMode
     
-    var body: some View {
+    var body:  some View {
         VStack {
             HStack {
                 Button {
@@ -35,6 +35,7 @@ struct NewTweetView: View {
                         .foregroundColor(.white)
                         .clipShape(Capsule())
                 }
+                
             }
             .padding()
             
@@ -43,12 +44,12 @@ struct NewTweetView: View {
                     .frame(width: 65, height: 65)
                 
                 TextArea("What's happening?", text: $caption)
+                
             }
             .padding()
         }
     }
 }
-
 
 struct NewTweetView_Previews: PreviewProvider {
     static var previews: some View {
