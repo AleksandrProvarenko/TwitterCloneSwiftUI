@@ -15,28 +15,18 @@ struct LogInView: View {
     var body: some View {
         // parent container
         VStack {
-            
             // header view
-            VStack(alignment: .leading) {
-                HStack { Spacer() }
-                Text("Hello.")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-                
-                Text("Welkome Back")
-                    .font(.largeTitle)
-                    .fontWeight(.semibold)
-            }
-            .padding(.leading)
-            .frame(height: 260)
-            .background(Color(.systemBlue))
-            .foregroundColor(.white)
-            .clipShape(RoundedShape(corners: [.bottomRight]))
+            AuthentificationHeaderView(firstTitle: "Hello",
+                                       secindTitle: "Welkome Back")
             
             VStack(spacing: 40) {
-                TextField("Email", text: $email)
+                CustomInputField(imageName: "envelope",
+                                 placeholderText: "Email",
+                                 text: $email)
                 
-                TextField("password", text: $password)
+                CustomInputField(imageName: "lock",
+                                 placeholderText: "Password",
+                                 text: $password)
             }
             .padding(.horizontal, 35)
             .padding(.top, 45)
