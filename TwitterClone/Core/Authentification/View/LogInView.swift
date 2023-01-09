@@ -11,6 +11,7 @@ struct LogInView: View {
     
     @State private var email = ""
     @State private var password = ""
+    @EnvironmentObject var viewModel: AuthViewMidel
     
     var body: some View {
         // parent container
@@ -47,7 +48,8 @@ struct LogInView: View {
             }
             
             Button {
-                print("Sign In here...")
+                viewModel.logIn(withEmail: email,
+                                password: password)
             } label: {
                 Text("Sign In")
                     .font(.headline)
