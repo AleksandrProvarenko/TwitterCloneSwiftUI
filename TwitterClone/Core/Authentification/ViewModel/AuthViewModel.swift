@@ -11,14 +11,22 @@ import Firebase
 class AuthViewMidel: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
+    @Published var didAuthentificateUser = false
     
     init() {
         self.userSession = Auth.auth().currentUser
-        
     }
     
     func logIn(withEmail email: String, password: String) {
-        print("DEBUG: Login with email \(email)")
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
+                print("DEBAG: Failed to sign in with error \(error.localizedDescription)")
+                return
+            }
+            
+            guard let user = result?.user else { return }
+            self.userSession = user
+        }
     }
     
     func register(withEmail email: String, password: String, fullName: String, userName: String) {
@@ -29,7 +37,6 @@ class AuthViewMidel: ObservableObject {
             }
             
             guard let user = result?.user else { return }
-            self.userSession = user
             
             let data = ["email": email,
                         "userName": userName.lowercased(),
@@ -39,7 +46,7 @@ class AuthViewMidel: ObservableObject {
             Firestore.firestore().collection("users")
                 .document(user.uid)
                 .setData(data) { _ in
-                    print("DEBUG: Did upload user data...")
+                    self.didAuthentificateUser = true
                 }
         }
     }

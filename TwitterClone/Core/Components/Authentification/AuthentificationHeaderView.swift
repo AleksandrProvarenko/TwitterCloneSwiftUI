@@ -10,7 +10,7 @@ import SwiftUI
 struct AuthentificationHeaderView: View {
     
     let firstTitle: String
-    let secindTitle: String
+    let secondTitle: String
     
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct AuthentificationHeaderView: View {
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                 
-                Text(secindTitle)
+                Text(secondTitle)
                     .font(.largeTitle)
                     .fontWeight(.semibold)
             }
@@ -37,6 +37,6 @@ struct AuthentificationHeaderView: View {
 struct AuthentificationHeader_Previews: PreviewProvider {
     static var previews: some View {
         AuthentificationHeaderView(firstTitle: "Hello.",
-                                   secindTitle: "Welkome Back")
+                                   secondTitle: "Welkome Back")
     }
 }

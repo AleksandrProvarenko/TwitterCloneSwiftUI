@@ -18,7 +18,7 @@ struct LogInView: View {
         VStack {
             // header view
             AuthentificationHeaderView(firstTitle: "Hello",
-                                       secindTitle: "Welkome Back")
+                                       secondTitle: "Welkome Back")
             
             VStack(spacing: 40) {
                 CustomInputField(imageName: "envelope",
@@ -27,6 +27,7 @@ struct LogInView: View {
                 
                 CustomInputField(imageName: "lock",
                                  placeholderText: "Password",
+                                 isSecureField: true,
                                  text: $password)
             }
             .padding(.horizontal, 35)
